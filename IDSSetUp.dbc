@@ -1,0 +1,66 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: CN2 CN3
+VAL_TABLE_ ID3 3 "Beschreibung für den Wert '0x3'" ;
+
+
+BO_ 3 Orange: 1 CN3
+ SG_ CANID : 0|8@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 2 Blue: 1 CN3
+ SG_ CANID : 0|8@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 1 Red: 1 CN3
+ SG_ CANID : 0|8@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 0 Purple: 1 CN2
+ SG_ CANID : 0|8@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_TX_BU_ 3 : CN2,CN3;
+BO_TX_BU_ 2 : CN2,CN3;
+BO_TX_BU_ 1 : CN2,CN3;
+BO_TX_BU_ 0 : CN3,CN2;
+
+
+EV_ CANID: 0 [0|3] "" 0 1 DUMMY_NODE_VECTOR3 Vector__XXX;
+
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "BusType" "";
+VAL_ 3 CANID 3 "Beschreibung für den Wert '0x3'" ;
+VAL_ 2 CANID 3 "Beschreibung für den Wert '0x3'" ;
+VAL_ 1 CANID 3 "Beschreibung für den Wert '0x3'" ;
+VAL_ 0 CANID 3 "Beschreibung für den Wert '0x3'" ;
+
