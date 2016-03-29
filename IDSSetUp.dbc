@@ -37,30 +37,14 @@ BU_: CN2 CN3
 VAL_TABLE_ ID3 3 "Beschreibung für den Wert '0x3'" ;
 
 
-BO_ 3 Orange: 1 CN3
- SG_ CANID : 0|8@1+ (1,0) [0|3] "" Vector__XXX
+BO_ 1 Hacked: 8 CN2
 
-BO_ 2 Blue: 1 CN3
- SG_ CANID : 0|8@1+ (1,0) [0|3] "" Vector__XXX
+BO_ 0 Legitimate: 8 CN3
 
-BO_ 1 Red: 1 CN3
- SG_ CANID : 0|8@1+ (1,0) [0|3] "" Vector__XXX
-
-BO_ 0 Purple: 1 CN2
- SG_ CANID : 0|8@1+ (1,0) [0|3] "" Vector__XXX
-
-BO_TX_BU_ 3 : CN2,CN3;
-BO_TX_BU_ 2 : CN2,CN3;
-BO_TX_BU_ 1 : CN2,CN3;
-BO_TX_BU_ 0 : CN3,CN2;
 
 
 EV_ CANID: 0 [0|3] "" 0 1 DUMMY_NODE_VECTOR3 Vector__XXX;
 
 BA_DEF_  "BusType" STRING ;
 BA_DEF_DEF_  "BusType" "";
-VAL_ 3 CANID 3 "Beschreibung für den Wert '0x3'" ;
-VAL_ 2 CANID 3 "Beschreibung für den Wert '0x3'" ;
-VAL_ 1 CANID 3 "Beschreibung für den Wert '0x3'" ;
-VAL_ 0 CANID 3 "Beschreibung für den Wert '0x3'" ;
 
