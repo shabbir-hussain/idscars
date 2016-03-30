@@ -1,0 +1,20 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  msTimer T1;
+}
+
+on start{
+  //add some randomness
+ setTimer(T1,50);  
+}
+on timer T1{
+
+   //reset timer
+   setTimer(T1,50);
+}
