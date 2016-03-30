@@ -6,12 +6,13 @@ includes
 
 variables
 {
+  //milisecond timer
   msTimer T1;
 }
 
 on start{
   //add some randomness
- setTimer(T1,50);  
+ setTimer(T1,50);  //50 milisecond
 }
 on timer T1{
 
