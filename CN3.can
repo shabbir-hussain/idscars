@@ -1,0 +1,25 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+ message Legitimate legit;
+ mstimer timer1;
+ int runBlue = 0;
+}
+
+on envVar StartBlue
+{
+  runBlue = !runBlue;
+  if (runBlue == 1) setTimer(timer1,100);
+}
+
+on timer timer1
+{
+  if (runBlue == 1) setTimer(timer1,random(101));
+  legit.byte(0)=legit.byte(0)+1;
+  output(legit); // output message
+}

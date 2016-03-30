@@ -37,14 +37,29 @@ BU_: CN2 CN3
 VAL_TABLE_ ID3 3 "Beschreibung für den Wert '0x3'" ;
 
 
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ Red : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Orange : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Purple : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+
 BO_ 1 Hacked: 8 CN2
 
-BO_ 0 Legitimate: 8 CN3
+BO_ 0 Legitimate: 1 CN3
+ SG_ Blue : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
 
 
-EV_ CANID: 0 [0|3] "" 0 1 DUMMY_NODE_VECTOR3 Vector__XXX;
+EV_ StartBlue: 0 [0|1] "" 0 1 DUMMY_NODE_VECTOR3 Vector__XXX;
 
+EV_ StartOrange: 0 [0|1] "" 0 2 DUMMY_NODE_VECTOR3 Vector__XXX;
+
+EV_ StartRed: 0 [0|1] "" 0 3 DUMMY_NODE_VECTOR3 Vector__XXX;
+
+EV_ StartPurple: 0 [0|1] "" 0 4 DUMMY_NODE_VECTOR3 Vector__XXX;
+
+EV_ CANID: 0 [0|3] "" 0 5 DUMMY_NODE_VECTOR3 Vector__XXX;
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
 BA_DEF_  "BusType" STRING ;
 BA_DEF_DEF_  "BusType" "";
 
