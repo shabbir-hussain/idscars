@@ -6,6 +6,47 @@ includes
 
 variables
 {
+  const int SampleSize =30;
+  
+  struct IDSData {
+    double period;
+    double jittter;
+    double lastMsgTime;
+    double sensorMin;
+    double sensorMax;
+    
+    double mean;
+    double samples[SampleSize];
+  };
+  
+  struct IDSData node2Data;
+}
+
+on start{
+  
+  node2Data.period=0.05;
+  node2Data.jittter=0.05;
+  node2Data.lastMsgTime=0;
+  node2Data.sensorMax = 200;
+  node2Data.sensorMin = 0;
+  node2Data.mean= node2Data.period+node2Data.jittter/2;
   
 }
 
+/*
+* Checks if a packet should be forwarded
+*/
+int isForward(struct IDSData data, double time ,message packet){
+  int forward = 0;
+  double difftime = time - data.lastMsgTime;
+  
+  
+  return forward;
+}
+
+/*
+* Updates the IDS data
+*/
+updateIDS(struct IDSData data, double time){
+  
+}

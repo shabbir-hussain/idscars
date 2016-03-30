@@ -8,6 +8,7 @@ variables
 {
  message Legitimate legit;
  mstimer timer1;
+ msTimer T1;
  int runBlue = 0;
 }
 
@@ -22,4 +23,15 @@ on timer timer1
   if (runBlue == 1) setTimer(timer1,random(101));
   legit.byte(0)=legit.byte(0)+1;
   output(legit); // output message
+
+}
+
+on start{
+  //add some randomness
+ setTimer(T1,50);  
+}
+on timer T1{
+
+   //reset timer
+   setTimer(T1,50);
 }
