@@ -8,8 +8,12 @@ variables
 {
  message Legitimate legit;
  mstimer timer1;
+ mstimer timer2;
+ mstimer timer3;
  msTimer T1;
  int runBlue = 0;
+ int runOrange = 0;
+ int runPurple = 0;
 }
 
 on envVar StartBlue
@@ -18,12 +22,38 @@ on envVar StartBlue
   if (runBlue == 1) setTimer(timer1,100);
 }
 
+on envVar StartOrange
+{
+  runOrange = !runOrange;
+  if (runOrange == 1) setTimer(timer2, 100);
+}
+
+on envVar StartPurple
+{
+  runPurple = !runPurple;
+  if (runPurple == 1) setTimer(timer3, 100);  
+}
+
 on timer timer1
 {
   if (runBlue == 1) setTimer(timer1,random(101));
-  legit.byte(0)=legit.byte(0)+1;
+  legit.Blue.byte(0) = (legit.Blue.byte(0) - 1)*(legit.Blue.byte(0) - 1);
   output(legit); // output message
 
+}
+
+on timer timer2 
+{
+  if (runOrange == 1) setTimer(timer2, random(101));
+  legit.Orange.byte(0) = (legit.Orange.byte(0) - 1)*(legit.Orange.byte(0) - 1); //toggle between 0 and 1
+  output(legit);
+}  
+
+on timer timer3
+{
+  if (runPurple == 1) setTimer(timer3, 100);
+  legit.Purple.byte(0) = (legit.Purple.byte(0) - 1)*(legit.Purple.byte(0) - 1);
+  output(legit);
 }
 
 on start{
