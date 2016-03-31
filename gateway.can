@@ -7,46 +7,107 @@ includes
 variables
 {
   const int SampleSize =30;
+  const int MaxIDs =4;
+  const int false = 0;
+  const int true = 1;
   
   struct IDSData {
+    int forward;
+    
     double period;
     double jittter;
+    double slack;
     double lastMsgTime;
-    double sensorMin;
-    double sensorMax;
+    char sensorMin;
+    char sensorMax;
     
     double mean;
     double samples[SampleSize];
   };
+    
+  struct IDSData nodeData[MaxIDs];
   
-  struct IDSData node2Data;
 }
 
 on start{
+  //set forwarding rules
   
-  node2Data.period=0.05;
-  node2Data.jittter=0.05;
-  node2Data.lastMsgTime=0;
-  node2Data.sensorMax = 200;
-  node2Data.sensorMin = 0;
-  node2Data.mean= node2Data.period+node2Data.jittter/2;
+  nodeData[2].forward=false;
+  nodeData[2].period=0.05;
+  nodeData[2].jittter=0.05;
+  nodeData[2].lastMsgTime=0;
+  nodeData[2].sensorMax = 200;
+  nodeData[2].sensorMin = 0;
+  nodeData[2].mean= nodeData[2].period+nodeData[2].jittter/2;
+  nodeData[2].slack = 0.01;
   
+  nodeData[3].forward=true;
+  nodeData[3].period=0.05;
+  nodeData[3].jittter=0.05;
+  nodeData[3].lastMsgTime=0;
+  nodeData[3].sensorMax = 200;
+  nodeData[3].sensorMin = 0;
+  nodeData[3].mean= nodeData[3].period+nodeData[3].jittter/2;
+  nodeData[3].slack = 0.01;
+  
+}
+
+
+
+/*
+* Checks if inter arrival time is allowed
+*/
+int isGoodTiming(int interArrivalTime, int id){
+  double lowerBound =0;
+  double upperBound = 0;
+  
+  lowerBound = nodeData[id].period-nodeData[id].jittter-nodeData[id].slack;
+  upperBound = nodeData[id].period+nodeData[id].jittter+nodeData[id].slack;
+  
+  if(lowerBound < interArrivalTime && interArrivalTime < upperBound){
+    return true;
+  }
+  
+  return false;
+}
+
+/*
+* Checks if data is within bounds
+*/
+int isGoodData(char data, int id){
+  if(nodeData[id].sensorMin < data && data < nodeData[id].sensorMax){
+    return true;
+  }
+  
+  return false;
 }
 
 /*
 * Checks if a packet should be forwarded
 */
-int isForward(struct IDSData data, double time ,message packet){
-  int forward = 0;
-  double difftime = time - data.lastMsgTime;
+int isForward( struct IDSData data, double time ,message Legitimate msg ){
+  //variable declaration
+  int forward = false;
+  double interArrivalTime = 0;
   
+  //get time difference
+  interArrivalTime = data.lastMsgTime;
+   
+  //check rules
+  if(nodeData[msg.id].forward == true){
+    if(isGoodTiming(interArrivalTime,msg.id) && isGoodData(msg.Blue, msg.id)){
+      forward = true;
+    }
+  }
   
+  updateIDS(data,forward);
+
   return forward;
 }
 
 /*
 * Updates the IDS data
 */
-updateIDS(struct IDSData data, double time){
+updateIDS(struct IDSData data, int forward){
   
 }
