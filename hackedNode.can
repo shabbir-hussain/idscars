@@ -7,7 +7,7 @@ includes
 variables
 {
  
-  const int nodeNumer=2;
+  const int nodeNumber=2;
   const int listening=0;
   const int injecting=1;
 
@@ -42,7 +42,7 @@ on message Legitimate{
   int sensor=0;
  
   //ignore loopback
-  if(this.NodeNumber==nodeNumer){
+  if(this.NodeNumber==nodeNumber){
     return;
   }
   
@@ -88,7 +88,13 @@ on message Legitimate{
 
 on timer T1{
   
-  //TODO: WRITE to bus
+  //WRITE to bus
+  message Legitimate msg;
+  msg.sensor=sensorMin;
+  msg.NodeNumber=nodeNumber;
   
+  output(msg);
+  
+  //reset
   setTimer(T1,periodMin);
 }
