@@ -39,13 +39,15 @@ VAL_TABLE_ ID3 3 "Beschreibung für den Wert '0x3'" ;
 
 BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
  SG_ Red : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Purple : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Orange : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Blue : 0|1@1+ (1,0) [0|1] "" Vector__XXX
 
 BO_ 1 Hacked: 8 CN2
 
-BO_ 0 Legitimate: 1 CN3
- SG_ Purple : 2|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ Orange : 1|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ Blue : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+BO_ 0 Legitimate: 2 CN3
+ SG_ NodeNumber : 8|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ sensor : 0|8@1- (1,0) [0|0] "" Vector__XXX
 
 
 
