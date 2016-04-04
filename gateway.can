@@ -10,7 +10,14 @@ variables
   const int MaxIDs =4;
   const int false = 0;
   const int true = 1;
+  const int MaxSenders=1;
   
+  //experiment variables
+  int falsePositives;
+  int falseNegatives;
+  int totalMessages;
+  
+  //ids data struct
   struct IDSData {
     int forward;
     
@@ -21,8 +28,12 @@ variables
     char sensorMin;
     char sensorMax;
     
-    double mean;
-    double samples[SampleSize];
+    double arrivalTimeMean;
+    double arrivalTimeSamples[SampleSize];
+    double sensorSamples[SampleSize];
+    int samplesCount;
+    
+    int allowedSenders[MaxSenders];
   };
     
   struct IDSData nodeData[MaxIDs];
@@ -30,16 +41,23 @@ variables
 }
 
 on start{
-  //set forwarding rules
+  //init default values
+  falsePositives = 0;
+  falseNegatives = 0;
+  totalMessages=0;
   
+  //set forwarding rules
   nodeData[2].forward=false;
   nodeData[2].period=0.05;
   nodeData[2].jittter=0.05;
   nodeData[2].lastMsgTime=0;
   nodeData[2].sensorMax = 200;
   nodeData[2].sensorMin = 0;
-  nodeData[2].mean= nodeData[2].period+nodeData[2].jittter/2;
+  nodeData[2].arrivalTimeMean= nodeData[2].period+nodeData[2].jittter/2;
   nodeData[2].slack = 0.01;
+  nodeData[2].samplesCount = 0;
+  nodeData[2].allowedSenders[0]=2;
+  
   
   nodeData[3].forward=true;
   nodeData[3].period=0.05;
@@ -47,8 +65,10 @@ on start{
   nodeData[3].lastMsgTime=0;
   nodeData[3].sensorMax = 200;
   nodeData[3].sensorMin = 0;
-  nodeData[3].mean= nodeData[3].period+nodeData[3].jittter/2;
+  nodeData[3].arrivalTimeMean= nodeData[3].period+nodeData[3].jittter/2;
   nodeData[3].slack = 0.01;
+  nodeData[3].samplesCount = 0;
+  nodeData[3].allowedSenders[0]=3;
   
 }
 
@@ -91,16 +111,16 @@ int isForward( struct IDSData data, double time ,message Legitimate msg ){
   double interArrivalTime = 0;
   
   //get time difference
-  interArrivalTime = data.lastMsgTime;
+  interArrivalTime = msg.time - data.lastMsgTime;
    
   //check rules
   if(nodeData[msg.id].forward == true){
-    if(isGoodTiming(interArrivalTime,msg.id) && isGoodData(msg.Blue, msg.id)){
+    if(isGoodTiming(interArrivalTime,msg.id) && isGoodData(msg.sensor, msg.id)){
       forward = true;
     }
   }
-  
-  updateIDS(data,forward);
+    
+  updateIDS(data,forward,msg);
 
   return forward;
 }
@@ -108,6 +128,55 @@ int isForward( struct IDSData data, double time ,message Legitimate msg ){
 /*
 * Updates the IDS data
 */
-updateIDS(struct IDSData data, int forward){
+updateIDS(struct IDSData data, int forward,message Legitimate msg){
+  int nodeNumber =0;
+  int i=0;
+  int allowed = false;
+  
+  double sum =0 ;
+  double sqSum = 0;
+  double sampleMean = 0;
+  double standardErr = 0;
+  double zScore = 0;
+  double pValue = 0;
+  
+  //update recv messages
+  totalMessages += 1;
+  data.samplesCount += 1;
+  
+  //update timing
+  data.lastMsgTime = msg.time;
+  
+  
+  
+  //check if msg in list of allowed senders
+//  for(i=0;i<MaxSenders;i++){
+//   if(msg.NodeNumber == data.allowedSenders[i])
+//    {
+//      allowed = true;
+//    }
+//  }
+//  
+//  //update false positives and negatives
+//  if( allowed==true && forward==false){
+//      falsePositives += 1;
+//  }
+//  else if(allowed==false && forward==true){
+//      falseNegatives += 1;
+//  }
+//   
+//  //check if enough messages are recieved
+//  if(data.samplesCount> SampleSize){
+//    for(i=0;i<SampleSize;i++){
+//      sum+=data.arrivalTimeSamples[i];
+//      sqSum+= (data.arrivalTimeSamples[i]*data.arrivalTimeSamples[i]);
+//    }
+//    sampleMean = sum/((double)SampleSize);
+//    standardErr = ( sqSum-(sampleMean*sampleMean) )/sqrt((double)SampleSize);
+//    zScore = (sampleMean-data.arrivalTimeMean)/standardErr;
+//    pValue = 0.01;//TODO: Calculate pvalue
+    
+    
+  }
   
 }

@@ -1,0 +1,94 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+ 
+  const int nodeNumer=2;
+  const int listening=0;
+  const int injecting=1;
+
+  
+  int listenForMessages;
+  msTimer T1;
+    
+  double periodMin;
+  double periodMax;
+  double lastMsgTime;
+  int sensorMin;
+  int sensorMax;
+  
+  int state;
+
+}
+
+on start{
+  periodMin=10000000;
+  periodMax=0;
+  lastMsgTime=0;
+  sensorMin=10000000;
+  sensorMax=0;
+  listenForMessages=500;
+  
+  state = listening;
+  
+}
+
+on message Legitimate{
+  double period=0;
+  int sensor=0;
+ 
+  //ignore loopback
+  if(this.NodeNumber==nodeNumer){
+    return;
+  }
+  
+  period = this.time - lastMsgTime;
+  sensor = this.sensor;
+  
+  if(state==listening){
+    
+    //update state
+    listenForMessages-=1;
+    if(listenForMessages<0){
+      state=injecting;
+    }
+    
+    //capture first msg
+    if(lastMsgTime==0){
+      lastMsgTime=this.time; 
+    }else{
+      
+      //get period bounds
+      if(period<periodMin){
+        periodMin=periodMin;
+      }
+      if(period>periodMax){
+       periodMax=period; 
+      }
+      
+      //sensor bounds
+      if(sensor<sensorMin){
+        sensorMin=sensor; 
+      }
+      if(sensor>sensorMax){
+        sensorMax=sensor; 
+      }
+      
+    }
+    
+  }else{
+    cancelTimer(T1);
+    setTimer(T1,periodMin);    
+  }
+}
+
+on timer T1{
+  
+  //TODO: WRITE to bus
+  
+  setTimer(T1,periodMin);
+}
