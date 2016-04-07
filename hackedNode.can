@@ -10,7 +10,6 @@ variables
   const int nodeNumber=2;
   const int listening=0;
   const int injecting=1;
-
   
   int listenForMessages;
   msTimer T1;
@@ -31,7 +30,7 @@ on start{
   lastMsgTime=0;
   sensorMin=10000000;
   sensorMax=0;
-  listenForMessages=500;
+  listenForMessages=10;
   
   state = listening;
   
@@ -39,6 +38,7 @@ on start{
 
 on message Legitimate{
   double period=0;
+  long setTime=0;
   int sensor=0;
  
   //ignore loopback
@@ -47,6 +47,7 @@ on message Legitimate{
   }
   
   period = this.time - lastMsgTime;
+  lastMsgTime=this.time;
   sensor = this.sensor;
   
   if(state==listening){
@@ -59,12 +60,12 @@ on message Legitimate{
     
     //capture first msg
     if(lastMsgTime==0){
-      lastMsgTime=this.time; 
+      //do nothing
     }else{
       
       //get period bounds
       if(period<periodMin){
-        periodMin=periodMin;
+        periodMin=period;
       }
       if(period>periodMax){
        periodMax=period; 
@@ -82,7 +83,8 @@ on message Legitimate{
     
   }else{
     cancelTimer(T1);
-    setTimer(T1,periodMin);    
+    setTime= (long) periodMin/10;
+    setTimer(T1,setTime);    
   }
 }
 

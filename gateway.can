@@ -38,6 +38,10 @@ variables
     
   struct IDSData nodeData[MaxIDs];
   
+  
+  char filename[14] = "Routerlog.txt";
+  dword fileHandle;
+  
 }
 
 on start{
@@ -70,9 +74,13 @@ on start{
   nodeData[3].samplesCount = 0;
   nodeData[3].allowedSenders[0]=3;
   
+   fileHandle = openFileWrite(filename,1);
 }
 
-
+//
+on message Legitimate{
+  isForward(this);
+}
 
 /*
 * Checks if inter arrival time is allowed
@@ -105,13 +113,14 @@ int isGoodData(char data, int id){
 /*
 * Checks if a packet should be forwarded
 */
-int isForward( struct IDSData data, double time ,message Legitimate msg ){
+int isForward( message Legitimate msg ){
   //variable declaration
   int forward = false;
-  double interArrivalTime = 0;
+  double interArrivalTime = 0;  
+  char buffer[100];
   
   //get time difference
-  interArrivalTime = msg.time - data.lastMsgTime;
+  interArrivalTime = msg.time - nodeData[msg.id].lastMsgTime;
    
   //check rules
   if(nodeData[msg.id].forward == true){
@@ -119,8 +128,11 @@ int isForward( struct IDSData data, double time ,message Legitimate msg ){
       forward = true;
     }
   }
-    
-  updateIDS(data,forward,msg);
+  
+  snprintf(buffer,100,"%d Time: %d ID: %d Sensor: %d  forward:%d\n",interArrivalTime,msg.NodeNumber,msg.sensor, forward);
+  filePutString(buffer,100,fileHandle);
+  
+  //updateIDS(data,forward,msg);
 
   return forward;
 }
@@ -146,6 +158,8 @@ updateIDS(struct IDSData data, int forward,message Legitimate msg){
   
   //update timing
   data.lastMsgTime = msg.time;
+  
+  
   
   
   
@@ -175,8 +189,8 @@ updateIDS(struct IDSData data, int forward,message Legitimate msg){
 //    standardErr = ( sqSum-(sampleMean*sampleMean) )/sqrt((double)SampleSize);
 //    zScore = (sampleMean-data.arrivalTimeMean)/standardErr;
 //    pValue = 0.01;//TODO: Calculate pvalue
-    
-    
-  }
+//    
+//    
+//  }
   
 }
