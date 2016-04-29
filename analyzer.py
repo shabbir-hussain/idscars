@@ -8,7 +8,7 @@ import scipy.stats as st
 import logging
 logging.basicConfig(filename='log.log', level=logging.DEBUG, format='[%(levelname)s] (%(threadName)-10s) %(message)s',)
 
-import parser
+import idsparser
 
 
 class AnalysisEngine():
@@ -104,5 +104,5 @@ class AnalysisEngine():
 #driver
 if __name__ == '__main__':
     ae = AnalysisEngine()
-    traceDictionary =  parser.parseTrace('Routerlog.txt')
+    traceDictionary =  idsparser.parseTrace('Routerlog.txt')
     ae.analyze(traceDictionary);
