@@ -129,7 +129,7 @@ int isForward( message Legitimate msg ){
     }
   }
   
-  snprintf(buffer,100,"%d Time: %d ID: %d Sensor: %d  forward: %d\n",interArrivalTime,msg.NodeNumber,msg.sensor, forward);
+  snprintf(buffer,100,"%d Time: %d ID: %d Sensor: %d  Forward: %d \n",interArrivalTime,msg.NodeNumber,msg.sensor, forward);
   filePutString(buffer,100,fileHandle);
   
   //updateIDS(data,forward,msg);
