@@ -8,6 +8,8 @@ import scipy.stats as st
 import logging
 logging.basicConfig(filename='log.log', level=logging.DEBUG, format='[%(levelname)s] (%(threadName)-10s) %(message)s',)
 
+import parser
+
 
 class AnalysisEngine():
 
@@ -40,9 +42,9 @@ class AnalysisEngine():
     falseNegatives = 0
     msgsFrom3 = 0
     msgsFrom2 = 0
-    def analyzemsg(self,msg,fwd):
+    def analyzemsg(self, time, sensor,ID,fwd):
         #update number of msgs
-        node = msg.data[1]
+        node = ID
         if node is 3:
             self.msgsFrom3 +=1
         elif node is 2:
@@ -84,6 +86,20 @@ class AnalysisEngine():
             fnRate = 0
         print(str(self.period)+"\t"+str(self.jitter)+"\t"+str(self.msgsFrom3)+"\t"+str(self.msgsFrom2)+"\t"+str(fpRate)+"\t"+str(fnRate)+"\t"+str(self.trueIntrusionDetected)+"\t"+str(self.falseIntrusionDetected))
 
+    def analyze(self,dictData):
+        startTime = 0
+        
+        for value in dictData:
+            #set diff time
+            diffTime = float(value['Time']) - startTime
+            self.samples.append(diffTime)
+            #reset time
+            startTime = float(value['Time'])
 
+            self.analyzemsg(float(value['Time']),float(value['Sensor']),int(value['ID']),bool(value['Forward']))
+
+#driver
 if __name__ == '__main__':
     ae = AnalysisEngine()
+    traceDictionary =  parser.parseTrace('Routerlog.txt')
+    ae.analyze(traceDictionary);
