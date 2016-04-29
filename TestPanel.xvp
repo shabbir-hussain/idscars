@@ -3,56 +3,18 @@
   <Object Type="Vector.CANalyzer.Panels.Runtime.Panel, Vector.CANalyzer.Panels.Common, Version=9.0.48.0, Culture=neutral, PublicKeyToken=null" Name="Panel" Children="Controls" ControlName="TestPanel">
     <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=9.0.48.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl3" Children="Controls" ControlName="Static Text 3">
       <Property Name="Name">StaticTextControl3</Property>
-      <Property Name="Size">36, 13</Property>
+      <Property Name="Size">78, 13</Property>
       <Property Name="Location">69, 106</Property>
-      <Property Name="Text">Purple</Property>
+      <Property Name="Text">TurnHackerOn</Property>
     </Object>
     <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=9.0.48.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl3" ControlName="Purple">
       <Property Name="Name">SwitchControl3</Property>
       <Property Name="Size">23, 30</Property>
-      <Property Name="Location">81, 72</Property>
+      <Property Name="Location">103, 70</Property>
       <Property Name="StateCnt">2</Property>
       <Property Name="SwitchValues">1;2;0;1</Property>
-      <Property Name="SymbolConfiguration">4;1;IDSSetUp;;;StartPurple;1;;;-1</Property>
+      <Property Name="SymbolConfiguration">4;1;IDSSetUp;;;HackerON;1;;;-1</Property>
       <Property Name="TabIndex">7</Property>
-    </Object>
-    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=9.0.48.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl2" Children="Controls" ControlName="Static Text 2">
-      <Property Name="Name">StaticTextControl2</Property>
-      <Property Name="Size">41, 13</Property>
-      <Property Name="Location">69, 178</Property>
-      <Property Name="Text">Orange</Property>
-    </Object>
-    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=9.0.48.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl2" ControlName="Orange">
-      <Property Name="Name">SwitchControl2</Property>
-      <Property Name="Size">23, 30</Property>
-      <Property Name="Location">81, 144</Property>
-      <Property Name="StateCnt">2</Property>
-      <Property Name="SwitchValues">1;2;0;1</Property>
-      <Property Name="SymbolConfiguration">4;1;IDSSetUp;;;StartOrange;1;;;-1</Property>
-      <Property Name="TabIndex">5</Property>
-    </Object>
-    <Object Type="Vector.CANalyzer.Panels.Design.StaticTextControl, Vector.CANalyzer.Panels.CommonControls, Version=9.0.48.0, Culture=neutral, PublicKeyToken=null" Name="StaticTextControl1" Children="Controls" ControlName="Static Text">
-      <Property Name="Name">StaticTextControl1</Property>
-      <Property Name="Size">59, 13</Property>
-      <Property Name="Location">198, 178</Property>
-      <Property Name="Text">Blue</Property>
-    </Object>
-    <Object Type="Vector.CANalyzer.Panels.Design.SwitchControl, Vector.CANalyzer.Panels.CommonControls, Version=9.0.48.0, Culture=neutral, PublicKeyToken=null" Name="SwitchControl1" ControlName="Blue">
-      <Property Name="Name">SwitchControl1</Property>
-      <Property Name="Size">23, 30</Property>
-      <Property Name="Location">203, 144</Property>
-      <Property Name="StateCnt">2</Property>
-      <Property Name="SwitchValues">1;2;0;1</Property>
-      <Property Name="SymbolConfiguration">4;1;IDSSetUp;;;StartBlue;1;;;-1</Property>
-      <Property Name="TabIndex">4</Property>
-    </Object>
-    <Object Type="Vector.CANalyzer.Panels.Design.ButtonControl, Vector.CANalyzer.Panels.CommonControls, Version=9.0.48.0, Culture=neutral, PublicKeyToken=null" Name="ButtonControl2" Children="Controls" ControlName="Red">
-      <Property Name="Name">ButtonControl2</Property>
-      <Property Name="Size">75, 23</Property>
-      <Property Name="Location">182, 79</Property>
-      <Property Name="Text">Red</Property>
-      <Property Name="SymbolConfiguration">4;1;IDSSetUp;;;StartRed;1;;;-1</Property>
-      <Property Name="TabIndex">2</Property>
     </Object>
     <Object Type="Vector.CANalyzer.Panels.Design.CAPLOutputViewControl, Vector.CANalyzer.Panels.CommonControls, Version=9.0.48.0, Culture=neutral, PublicKeyToken=null" Name="CAPLOutputViewControl1" Children="Controls" ControlName="CAPL Output View">
       <Property Name="Name">CAPLOutputViewControl1</Property>

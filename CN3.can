@@ -8,48 +8,41 @@ variables
 {
  message Legitimate legit;
  mstimer timer1;
- mstimer timer2;
- mstimer timer3;
- msTimer T1;
- int runBlue = 0;
- int runOrange = 0;
- int runPurple = 0;
+    
+ int sensor=0;
   
-  int sensor=0;
+ //101ms 
+ int sendingRate = 101;
+  
+  //incDec
+  int inc = 0;
 }
 
-on envVar StartBlue
-{
-  runBlue = !runBlue;
-  if (runBlue == 1) setTimer(timer1,100);
-}
 
-on envVar StartOrange
-{
-  runOrange = !runOrange;
-  if (runOrange == 1) setTimer(timer2, 100);
-}
-
-on envVar StartPurple
-{
-  runPurple = !runPurple;
-  if (runPurple == 1) setTimer(timer3, 100);  
-}
 
 on timer timer1
 {
-  //if (runBlue == 1) 
-  
+  //set up node number
   legit.NodeNumber=3;
   
-  sensor +=1;
-  sensor %=100;
+  //change sensor direction
+  if(sensor%100==0){
+   inc=!inc;
+  }
   
+  //update sensor value
+  if(inc){
+    sensor +=1;
+  }else{
+    sensor -=1;
+  }
+
+  //put message on bus
   legit.sensor=sensor;
   output(legit); // output message
-
-  
-  setTimer(timer1,random(101));
+ 
+  //reset timer
+  setTimer(timer1,random(sendingRate));
 }
 
 

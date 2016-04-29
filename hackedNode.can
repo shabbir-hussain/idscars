@@ -6,6 +6,7 @@ includes
 
 variables
 {
+  int hackerIsOn =0;
  
   const int nodeNumber=2;
   const int listening=0;
@@ -34,6 +35,13 @@ on start{
   
   state = listening;
   
+}
+
+on envVar HackerON
+{
+  //toggle off on
+  hackerIsOn = !hackerIsOn;
+ 
 }
 
 on message Legitimate{
@@ -89,14 +97,16 @@ on message Legitimate{
 }
 
 on timer T1{
-  
-  //WRITE to bus
-  message Legitimate msg;
-  msg.sensor=sensorMin;
-  msg.NodeNumber=nodeNumber;
-  
-  output(msg);
-  
-  //reset
-  setTimer(T1,periodMin);
+  if(hackerIsOn){
+
+    //WRITE to bus
+    message Legitimate msg;
+    msg.sensor=sensorMin;
+    msg.NodeNumber=nodeNumber;
+    
+    output(msg);
+    
+    //reset
+    setTimer(T1,periodMin);
+  }
 }

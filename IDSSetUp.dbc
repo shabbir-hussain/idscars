@@ -51,15 +51,17 @@ BO_ 0 Legitimate: 2 CN3
 
 
 
-EV_ StartBlue: 0 [0|1] "" 0 1 DUMMY_NODE_VECTOR3 Vector__XXX;
+EV_ HackerON: 0 [0|0] "" 0 1 DUMMY_NODE_VECTOR3 Vector__XXX;
 
-EV_ StartOrange: 0 [0|1] "" 0 2 DUMMY_NODE_VECTOR3 Vector__XXX;
+EV_ StartBlue: 0 [0|1] "" 0 2 DUMMY_NODE_VECTOR3 Vector__XXX;
 
-EV_ StartRed: 0 [0|1] "" 0 3 DUMMY_NODE_VECTOR3 Vector__XXX;
+EV_ StartOrange: 0 [0|1] "" 0 3 DUMMY_NODE_VECTOR3 Vector__XXX;
 
-EV_ StartPurple: 0 [0|1] "" 0 4 DUMMY_NODE_VECTOR3 Vector__XXX;
+EV_ StartRed: 0 [0|1] "" 0 4 DUMMY_NODE_VECTOR3 Vector__XXX;
 
-EV_ CANID: 0 [0|3] "" 0 5 DUMMY_NODE_VECTOR3 Vector__XXX;
+EV_ StartPurple: 0 [0|1] "" 0 5 DUMMY_NODE_VECTOR3 Vector__XXX;
+
+EV_ CANID: 0 [0|3] "" 0 6 DUMMY_NODE_VECTOR3 Vector__XXX;
 
 CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
 BA_DEF_  "BusType" STRING ;
