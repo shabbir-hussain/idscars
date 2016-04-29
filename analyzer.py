@@ -98,6 +98,9 @@ class AnalysisEngine():
 
             self.analyzemsg(float(value['Time']),float(value['Sensor']),int(value['ID']),bool(value['Forward']))
 
+        if(not self.trueIntrusionDetected and not self.falseIntrusionDetected):
+            print("No intrusion")
+
 #driver
 if __name__ == '__main__':
     ae = AnalysisEngine()
