@@ -1,5 +1,6 @@
 #parses a trace and gives a dictionary output
-def parseTrace(log_file):
+def parseTrace(log_file_name):
+    log_file = open(log_file_name)
     data = []
     for line in log_file:
         line = line.rstrip('\n')
@@ -19,9 +20,7 @@ def parseTrace(log_file):
 if(__name__=='__main__'):
 
     import sys
-
-    log_file = open(sys.argv[1])
-    list_of_dict = parseTrace(log_file)
+    list_of_dict = parseTrace(sys.argv[1])
     print list_of_dict[:5]
 
 #Example output

@@ -1,81 +1,81 @@
-0 Time: 1085511168 ID: 3 Sensor: 1  forward:0
-0 Time: 1087057152 ID: 3 Sensor: 2  forward:0
-0 Time: 1087784832 ID: 3 Sensor: 3  forward:0
-0 Time: 1087964032 ID: 3 Sensor: 4  forward:0
-0 Time: 1088436160 ID: 3 Sensor: 5  forward:0
-0 Time: 1088455360 ID: 3 Sensor: 6  forward:0
-0 Time: 1088474560 ID: 3 Sensor: 7  forward:0
-0 Time: 1088573760 ID: 3 Sensor: 8  forward:0
-0 Time: 1088858560 ID: 3 Sensor: 9  forward:0
-0 Time: 1088948160 ID: 3 Sensor: 10  forward:0
-0 Time: 1089248960 ID: 3 Sensor: 11  forward:0
-0 Time: 1089453760 ID: 3 Sensor: 12  forward:0
-0 Time: 1089558320 ID: 2 Sensor: -128  forward:0
-0 Time: 1089583712 ID: 3 Sensor: 13  forward:0
-0 Time: 1089615712 ID: 3 Sensor: 14  forward:0
-0 Time: 1089711920 ID: 2 Sensor: -128  forward:0
-0 Time: 1089735712 ID: 3 Sensor: 15  forward:0
-0 Time: 1089807712 ID: 3 Sensor: 16  forward:0
-0 Time: 1089903920 ID: 2 Sensor: -128  forward:0
-0 Time: 1089906896 ID: 3 Sensor: 17  forward:0
-0 Time: 1089935696 ID: 3 Sensor: 18  forward:0
-0 Time: 1090031920 ID: 2 Sensor: -128  forward:0
-0 Time: 1090086096 ID: 3 Sensor: 19  forward:0
-0 Time: 1090182096 ID: 3 Sensor: 20  forward:0
-0 Time: 1090182320 ID: 2 Sensor: -128  forward:0
-0 Time: 1090278320 ID: 2 Sensor: -128  forward:0
-0 Time: 1090324512 ID: 3 Sensor: 21  forward:0
-0 Time: 1090346912 ID: 3 Sensor: 22  forward:0
-0 Time: 1090443120 ID: 2 Sensor: -128  forward:0
-0 Time: 1090462096 ID: 3 Sensor: 23  forward:0
-0 Time: 1090494096 ID: 3 Sensor: 24  forward:0
-0 Time: 1090554680 ID: 2 Sensor: -128  forward:0
-0 Time: 1090582568 ID: 3 Sensor: 25  forward:0
-0 Time: 1090630680 ID: 2 Sensor: -128  forward:0
-0 Time: 1090635368 ID: 3 Sensor: 26  forward:0
-0 Time: 1090638568 ID: 3 Sensor: 27  forward:0
-0 Time: 1090686680 ID: 2 Sensor: -128  forward:0
-0 Time: 1090700176 ID: 3 Sensor: 28  forward:0
-0 Time: 1090748280 ID: 2 Sensor: -128  forward:0
-0 Time: 1090764176 ID: 3 Sensor: 29  forward:0
-0 Time: 1090788976 ID: 3 Sensor: 30  forward:0
-0 Time: 1090837080 ID: 2 Sensor: -128  forward:0
-0 Time: 1090864976 ID: 3 Sensor: 31  forward:0
-0 Time: 1090913080 ID: 2 Sensor: -128  forward:0
-0 Time: 1090915376 ID: 3 Sensor: 32  forward:0
-0 Time: 1090930568 ID: 3 Sensor: 33  forward:0
-0 Time: 1090947376 ID: 3 Sensor: 34  forward:0
-0 Time: 1090972976 ID: 3 Sensor: 35  forward:0
-0 Time: 1091000976 ID: 3 Sensor: 36  forward:0
-0 Time: 1091040968 ID: 3 Sensor: 37  forward:0
-0 Time: 1091044968 ID: 3 Sensor: 38  forward:0
-0 Time: 1091092968 ID: 3 Sensor: 39  forward:0
-0 Time: 1091093080 ID: 2 Sensor: -128  forward:0
-0 Time: 1091141080 ID: 2 Sensor: -128  forward:0
-0 Time: 1091148168 ID: 3 Sensor: 40  forward:0
-0 Time: 1091154576 ID: 3 Sensor: 41  forward:0
-0 Time: 1091164976 ID: 3 Sensor: 42  forward:0
-0 Time: 1091213080 ID: 2 Sensor: -128  forward:0
-0 Time: 1091221776 ID: 3 Sensor: 43  forward:0
-0 Time: 1091269880 ID: 2 Sensor: -128  forward:0
-0 Time: 1091300176 ID: 3 Sensor: 44  forward:0
-0 Time: 1091317768 ID: 3 Sensor: 45  forward:0
-0 Time: 1091344968 ID: 3 Sensor: 46  forward:0
-0 Time: 1091387368 ID: 3 Sensor: 47  forward:0
-0 Time: 1091401776 ID: 3 Sensor: 48  forward:0
-0 Time: 1091449880 ID: 2 Sensor: -128  forward:0
-0 Time: 1091465776 ID: 3 Sensor: 49  forward:0
-0 Time: 1091513880 ID: 2 Sensor: -128  forward:0
-0 Time: 1091540976 ID: 3 Sensor: 50  forward:0
-0 Time: 1091573496 ID: 3 Sensor: 51  forward:0
-0 Time: 1091578692 ID: 3 Sensor: 52  forward:0
-0 Time: 1091583096 ID: 3 Sensor: 53  forward:0
-0 Time: 1091606696 ID: 3 Sensor: 54  forward:0
-0 Time: 1091613096 ID: 3 Sensor: 55  forward:0
-0 Time: 1091624692 ID: 3 Sensor: 56  forward:0
-0 Time: 1091648748 ID: 2 Sensor: -128  forward:0
-0 Time: 1091659896 ID: 3 Sensor: 57  forward:0
-0 Time: 1091663096 ID: 3 Sensor: 58  forward:0
-0 Time: 1091666292 ID: 3 Sensor: 59  forward:0
-0 Time: 1091681896 ID: 3 Sensor: 60  forward:0
-0 Time: 1091705948 ID: 2 Sensor: -128  forward:0
+0 Time: 1085511168 ID: 3 Sensor: 1 Forward: 0 
+0 Time: 1087057152 ID: 3 Sensor: 2 Forward: 0
+0 Time: 1087784832 ID: 3 Sensor: 3 Forward: 0
+0 Time: 1087964032 ID: 3 Sensor: 4 Forward: 0
+0 Time: 1088436160 ID: 3 Sensor: 5 Forward: 0
+0 Time: 1088455360 ID: 3 Sensor: 6 Forward: 0
+0 Time: 1088474560 ID: 3 Sensor: 7 Forward: 0
+0 Time: 1088573760 ID: 3 Sensor: 8  Forward: 0 
+0 Time: 1088858560 ID: 3 Sensor: 9  Forward: 0 
+0 Time: 1088948160 ID: 3 Sensor: 10  Forward: 0 
+0 Time: 1089248960 ID: 3 Sensor: 11  Forward: 0 
+0 Time: 1089453760 ID: 3 Sensor: 12  Forward: 0 
+0 Time: 1089558320 ID: 2 Sensor: -128  Forward:  0
+0 Time: 1089583712 ID: 3 Sensor: 13  Forward: 0 
+0 Time: 1089615712 ID: 3 Sensor: 14  Forward: 0 
+0 Time: 1089711920 ID: 2 Sensor: -128  Forward:  0
+0 Time: 1089735712 ID: 3 Sensor: 15  Forward: 0 
+0 Time: 1089807712 ID: 3 Sensor: 16  Forward: 0 
+0 Time: 1089903920 ID: 2 Sensor: -128  Forward:  0
+0 Time: 1089906896 ID: 3 Sensor: 17  Forward: 0 
+0 Time: 1089935696 ID: 3 Sensor: 18  Forward: 0 
+0 Time: 1090031920 ID: 2 Sensor: -128  Forward:  0
+0 Time: 1090086096 ID: 3 Sensor: 19  Forward: 0 
+0 Time: 1090182096 ID: 3 Sensor: 20  Forward: 0 
+0 Time: 1090182320 ID: 2 Sensor: -128  Forward:  0
+0 Time: 1090278320 ID: 2 Sensor: -128  Forward: 0 
+0 Time: 1090324512 ID: 3 Sensor: 21  Forward: 0 
+0 Time: 1090346912 ID: 3 Sensor: 22  Forward: 0 
+0 Time: 1090443120 ID: 2 Sensor: -128  Forward:  0
+0 Time: 1090462096 ID: 3 Sensor: 23  Forward: 0 
+0 Time: 1090494096 ID: 3 Sensor: 24  Forward: 0 
+0 Time: 1090554680 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1090582568 ID: 3 Sensor: 25  Forward: 0
+0 Time: 1090630680 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1090635368 ID: 3 Sensor: 26  Forward: 0
+0 Time: 1090638568 ID: 3 Sensor: 27  Forward: 0
+0 Time: 1090686680 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1090700176 ID: 3 Sensor: 28  Forward: 0
+0 Time: 1090748280 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1090764176 ID: 3 Sensor: 29  Forward: 0
+0 Time: 1090788976 ID: 3 Sensor: 30  Forward: 0
+0 Time: 1090837080 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1090864976 ID: 3 Sensor: 31  Forward: 0
+0 Time: 1090913080 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1090915376 ID: 3 Sensor: 32  Forward: 0
+0 Time: 1090930568 ID: 3 Sensor: 33  Forward: 0
+0 Time: 1090947376 ID: 3 Sensor: 34  Forward: 0
+0 Time: 1090972976 ID: 3 Sensor: 35  Forward: 0
+0 Time: 1091000976 ID: 3 Sensor: 36  Forward: 0
+0 Time: 1091040968 ID: 3 Sensor: 37  Forward: 0
+0 Time: 1091044968 ID: 3 Sensor: 38  Forward: 0
+0 Time: 1091092968 ID: 3 Sensor: 39  Forward: 0
+0 Time: 1091093080 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1091141080 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1091148168 ID: 3 Sensor: 40  Forward: 0
+0 Time: 1091154576 ID: 3 Sensor: 41  Forward: 0
+0 Time: 1091164976 ID: 3 Sensor: 42  Forward: 0
+0 Time: 1091213080 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1091221776 ID: 3 Sensor: 43  Forward: 0
+0 Time: 1091269880 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1091300176 ID: 3 Sensor: 44  Forward: 0
+0 Time: 1091317768 ID: 3 Sensor: 45  Forward: 0
+0 Time: 1091344968 ID: 3 Sensor: 46  Forward: 0
+0 Time: 1091387368 ID: 3 Sensor: 47  Forward: 0
+0 Time: 1091401776 ID: 3 Sensor: 48  Forward: 0
+0 Time: 1091449880 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1091465776 ID: 3 Sensor: 49  Forward: 0
+0 Time: 1091513880 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1091540976 ID: 3 Sensor: 50  Forward: 0
+0 Time: 1091573496 ID: 3 Sensor: 51  Forward: 0
+0 Time: 1091578692 ID: 3 Sensor: 52  Forward: 0
+0 Time: 1091583096 ID: 3 Sensor: 53  Forward: 0
+0 Time: 1091606696 ID: 3 Sensor: 54  Forward: 0
+0 Time: 1091613096 ID: 3 Sensor: 55  Forward: 0
+0 Time: 1091624692 ID: 3 Sensor: 56  Forward: 0
+0 Time: 1091648748 ID: 2 Sensor: -128  Forward: 0
+0 Time: 1091659896 ID: 3 Sensor: 57  Forward: 0
+0 Time: 1091663096 ID: 3 Sensor: 58  Forward: 0
+0 Time: 1091666292 ID: 3 Sensor: 59  Forward: 0
+0 Time: 1091681896 ID: 3 Sensor: 60  Forward: 0
+0 Time: 1091705948 ID: 2 Sensor: -128  Forward: 0
