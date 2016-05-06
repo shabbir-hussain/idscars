@@ -101,7 +101,7 @@ on timer T1{
 
     //WRITE to bus
     message Legitimate msg;
-    msg.sensor=sensorMin;
+    msg.sensor=111;
     msg.NodeNumber=nodeNumber;
     
     output(msg);
