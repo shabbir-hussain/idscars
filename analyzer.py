@@ -11,6 +11,7 @@ logging.basicConfig(filename='log.log', level=logging.DEBUG, format='[%(levelnam
 import idsparser
 
 previousData = -1
+previousprevData = -1
 previousTime = -1
 slope = -1
 
@@ -51,7 +52,10 @@ class AnalysisEngine():
         #update number of msgs
         node = ID
         global previousData
+        global previousprevData
         global previousTime
+        difference1 = 0
+        difference2 = 0
         if node is 3:
             self.msgsFrom3 +=1
         elif node is 2:
@@ -70,28 +74,23 @@ class AnalysisEngine():
             standardErr = np.std(self.samples)/np.sqrt(self.sampleSize)
             zscore = (sampleMean-self.mean)/(standardErr)
             pValue = st.norm.cdf(zscore)
+            previousTime = time
 
-            if previousData is -1:
+            if previousprevData is -1:
+            	previousprevData = sensor
+            elif previousData is -1:
             	previousData = sensor
-            	previousTime = time
             elif previousData is not -1:
-            	#do slope calculations
-
-            	#if (time - previousTime) is not 0:
-            	global slope
-            	slope = (sensor - previousData)/(time - previousTime)
+            	
+            	difference1 = abs(previousData - sensor)
+            	difference2 = abs(previousData - previousprevData)
+            	print(difference1)
+            	print(difference2)
+            	previousprevData = previousData
             	previousData = sensor
-            	previousTime = time
+            	if (difference1 > 4) ^ (difference2 > 4):
+            		self.trueIntrusionDetected=True
 
-            # print(sensor)
-
-            # print(slope)
-            # print("------")
-            # if sensor == 111:
-            # 	print(slope)
-            if slope > 0.001:
-            	self.trueIntrusionDetected=True
-                #print("true intrusion")
 
             
             #perform single tailed test to see if sample is 99%  less than mean
